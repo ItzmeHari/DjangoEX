@@ -1,1 +1,3 @@
 # DjangoEX
+    Django practice examples
+    
