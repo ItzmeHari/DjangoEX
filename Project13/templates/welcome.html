@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Page</title>
+</head>
+<body>
+    {% if msg == 'admin' %}
+        <h1>Welcome Admin</h1>
+    {% elif msg == 'emp' %}
+        <h1>Welcome Employee</h1>
+    {% else %}
+        <h1>Welcome Customer</h1>
+    {% endif %}
+</body>
+</html>
