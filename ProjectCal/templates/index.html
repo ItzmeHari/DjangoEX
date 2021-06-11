@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="/index/" >
+        {%  csrf_token %}
+        <table border="2" align="center" width="400px" height="200px">
+            <tr>
+                <td colspan="2">
+                    <lable>first number</lable>
+                </td>
+                <td colspan="2">
+                    <input type="number" name="t1" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <lable>second number</lable>
+                </td>
+                <td colspan="2">
+                    <input type="number" name="t2" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" name="b1"><h1>+</h1></button>
+                </td>
+                <td>
+                    <button type="submit" name="b2"><h1>-</h1></button>
+                </td>
+                <td>
+                    <button type="submit" name="b3"><h1>*</h1></button>
+                </td>
+                <td>
+                    <button type="submit" name="b4"><h1>/</h1></button>
+                </td>
+            </tr>
+            {% if result != None %}
+            <tr>
+                <th colspan="2">Result</th>
+                <th colspan="2">{ result }</th>
+            </tr>
+            {% endif %}
+        </table>
+    </form>
+</body>
+</html>

@@ -5,7 +5,7 @@
     <title>Login</title>
 </head>
 <body>
-    {% if msg == 'invalid' %}
+
         <form method="post" action="/index/" >
             {% csrf_token %}
             <table border="2" align="center" height = "200px" width="400px">
@@ -37,45 +37,12 @@
                 <tr>
                     <th colspan="2"><button type="submit">Login</button></th>
                 </tr>
+                {% if msg == "invalid" %}
                 <tr>
                     <th colspan="2">Invalid User</th>
                 </tr>
+                {%  endif %}
             </table>
         </form>
-    {% else %}
-        <form method="post" action="/index/" >
-            {% csrf_token %}
-            <table border="2" align="center" height = "200px" width="400px">
-                <tr>
-                    <th colspan="2">Login</th>
-                </tr>
-                <tr>
-                    <td>User Name</td>
-                    <td>
-                        <input type="text" name="t1" placeholder="username" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td>
-                        <input type="password" name="t2" placeholder="password" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>User Type</td>
-                    <td>
-                        <select name="t3" >
-                            <option>admin</option>
-                            <option>employee</option>
-                            <option>customer</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th colspan="2"><button type="submit">Login</button></th>
-                </tr>
-            </table>
-        </form>
-    {% endif %}
 </body>
 </html>
